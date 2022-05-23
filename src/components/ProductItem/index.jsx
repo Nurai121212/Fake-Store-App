@@ -1,7 +1,16 @@
 import styles from './style.module.sass';
 import cart from '../../asserts/header-cart.png'
 
+import {useDispatch} from 'react-redux'
+import { setItemsInCart } from '../Store/cart/reducer';
+
 function Product({product}) {
+  const dispatch = useDispatch();
+
+  const appendToCart = (e) => {
+    e.stopPropagation();
+    dispatch(setItemsInCart(product))
+  }
   return(
     <div className={styles.product}>
       <div className={styles.image}>
@@ -14,9 +23,12 @@ function Product({product}) {
       </div>
         <div className={styles.productBottom}>
           <h5>{product.price}$</h5>
-          <button>
-            <img src={cart} alt="" />
-          </button>
+          <div>
+            <button>More</button>
+            <button onClick={appendToCart}>
+              <img src={cart} alt="" />
+            </button>
+          </div>
         </div>
     </div>
   )

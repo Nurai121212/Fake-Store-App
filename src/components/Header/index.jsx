@@ -25,9 +25,9 @@ function Header(){
             <NavLink to='/signup' className={({ isActive }) => (isActive ? (styles.activeLink) : (styles.headerLink))}>Sign Up</NavLink>
           </li>
           <li className={styles.navItem}>
-            <button>
+            <NavLink to='/cart'>
               <img src={headerCart} alt="" className={styles.headerCart}/>
-            </button>
+            </NavLink>
           </li>
         </ul>
       </div>
