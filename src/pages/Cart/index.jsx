@@ -1,12 +1,8 @@
-import {useSelector} from 'react-redux';
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
+import CartContent from './Content';
 
 function Cart(){
-  
-  const items = useSelector(state => state.cart.cartItems);
-  console.log(items);
-
   return(
     <div style={{
       minHeight: '100vh',
@@ -14,7 +10,7 @@ function Cart(){
       flexDirection: 'column'
     }}>
       <Header/>
-      <h1>This is Cart</h1>
+      <CartContent/>
       <Footer/>
     </div>
   )

@@ -9,28 +9,31 @@ function Product({product}) {
 
   const appendToCart = (e) => {
     e.stopPropagation();
-    dispatch(setItemsInCart(product))
+    dispatch(setItemsInCart(product));
   }
+  
   return(
-    <div className={styles.product}>
-      <div className={styles.image}>
-        <img src={product.image} alt="" />
-      </div>
-      <div className={styles.desc}>
-        <h2>{product.title}</h2>
-        <h3>{product.category}</h3>
-        <h4> Rate : {product.rating.rate}</h4>
-      </div>
-        <div className={styles.productBottom}>
-          <h5>{product.price}$</h5>
-          <div>
-            <button>More</button>
-            <button onClick={appendToCart}>
-              <img src={cart} alt="" />
-            </button>
-          </div>
+    <>
+      <div className={styles.product}>
+        <div className={styles.image}>
+          <img src={product.image} alt="" />
         </div>
-    </div>
+        <div className={styles.desc}>
+          <h2>{product.title}</h2>
+          <h3>{product.category}</h3>
+          <h4> Rate : {product.rating.rate}</h4>
+        </div>
+          <div className={styles.productBottom}>
+            <h5>{product.price}$</h5>
+            <div>
+              <button>More</button>
+              <button onClick={appendToCart}>
+                <img src={cart} alt="" />
+              </button>
+            </div>
+          </div>
+      </div>
+    </>
   )
 }
 

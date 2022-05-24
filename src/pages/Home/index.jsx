@@ -1,6 +1,6 @@
 import Header from "../../components/Header"
 import Footer from "../../components/Footer";
-import Content from "./Content";
+import HomeContent from "./Content";
 
 function Home(){
   return(
@@ -10,7 +10,7 @@ function Home(){
       flexDirection: 'column'
     }}>
       <Header/>
-      <Content/>
+      <HomeContent/>
       <Footer/>
     </div>
   )

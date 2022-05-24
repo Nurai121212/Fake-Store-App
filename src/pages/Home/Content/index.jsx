@@ -7,7 +7,7 @@ import Preloader from '../../../components/Preloader';
 
 import error from '../../../asserts/cat-error.gif';
 
-function Content(){
+function HomeContent(){
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false)
 
@@ -43,4 +43,4 @@ function Content(){
   )
 }
 
-export default Content;
+export default HomeContent;
