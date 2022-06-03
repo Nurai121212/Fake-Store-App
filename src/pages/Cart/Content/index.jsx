@@ -5,6 +5,7 @@ import styles from './style.module.sass'
 function CartContent(){
   const items = useSelector((state) => state.cart.cartItems);
   const totalPrice = items.reduce((sum, item) => (sum += (item.price * item.quantity)), 0);
+
   return(
     <div className={styles.container}>
       {items.length ? (
@@ -18,7 +19,7 @@ function CartContent(){
               )
             })}
           </ul>
-          <div>
+          <div className={styles.totalPrice}>
             Total : {totalPrice}$
           </div>
         </>
