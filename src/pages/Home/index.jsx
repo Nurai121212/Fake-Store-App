@@ -9,10 +9,9 @@ import error from '../../asserts/cat-error.gif'
 
 function HomeContent(){
   const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    setLoading(true)
     axios.get('https://fakestoreapi.com/products')
           .then((data) => {
             setData(data.data);

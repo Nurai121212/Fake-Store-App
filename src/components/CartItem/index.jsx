@@ -1,9 +1,11 @@
 import {useDispatch} from 'react-redux'
 import { deleteItemsFromCart } from '../Store/cart/reducer';
 import styles from './style.module.sass';
+import {useNavigate} from 'react-router-dom';
 
 function CartItem({product}){
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const deleteFromCart = () => {
     dispatch(deleteItemsFromCart(product.id))
@@ -18,7 +20,7 @@ function CartItem({product}){
       </div>
       <div className={styles.cartBottom}>
         <button onClick={deleteFromCart}>Delete</button>
-        <button>More</button>
+        <button onClick={() => navigate('/product/' + product.id)}>More</button>
       </div>
     </div>
   )
