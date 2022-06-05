@@ -7,7 +7,7 @@ function CartContent(){
   const totalPrice = items.reduce((sum, item) => (sum += (item.price * item.quantity)), 0);
 
   return(
-    <div className={styles.container}>
+    <>
       {items.length ? (
         <>
           <ul className={styles.cartList}>
@@ -28,7 +28,7 @@ function CartContent(){
           <h1>Cart is empty</h1>
         </div>
       )}
-    </div>
+    </>
   )
 }
 

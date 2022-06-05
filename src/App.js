@@ -14,19 +14,17 @@ function App() {
 return (
   <Provider store={store}>
     <Router>
-      <div style={{
-        minHeight: '100vh',
-        display: 'flex',
-        flexDirection: 'column'
-      }}>
+      <div className='app-wrapper'>
         <Header/>
-        <Routes>
-            <Route exact path='/' element={<Home />}/>
-            <Route exact path='/about' element={<About />} />
-            <Route exact path='/cart' element={<Cart/>} />
+        <main className='app-container'>
+          <Routes>
+              <Route exact path='/' element={<Home />}/>
+              <Route exact path='/about' element={<About />} />
+              <Route exact path='/cart' element={<Cart/>} />
 
-            <Route exact path='/product/:id' element={<ProductPage/>}/>
-        </Routes>
+              <Route exact path='/product/:id' element={<ProductPage/>}/>
+          </Routes>
+        </main>
         <Footer/>
       </div>
     </Router>

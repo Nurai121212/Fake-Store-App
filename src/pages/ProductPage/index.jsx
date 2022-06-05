@@ -35,7 +35,7 @@ function ProductPage(){
   
   const getData = async() => {
     try{
-      let res = await axios.get('https://fakestoreapi.com/products/' + param.id);
+      const res = await axios.get('https://fakestoreapi.com/products/' + param.id);
       setItem(res.data);
 
       if(items.find(elem => elem.id === res.data.id)){
@@ -53,14 +53,14 @@ function ProductPage(){
   }, [])
 
   return(
-    <div className={styles.container}>
+    <>
       {loading ? (<Preloader/>) :
         (item ? (
           <div className={styles.product}>
             <div className={styles.productRight}>
               <h1>{item.title}</h1>
-              <h2>{item.category}</h2>
-              <h3>{item.price}$</h3>
+              <span>{item.category}</span>
+              <h2>{item.price}$</h2>
               <p>{item.description}</p>
               <div>
               {inCart ? (
@@ -81,7 +81,7 @@ function ProductPage(){
           </div>)
         )
       }
-    </div>
+    </>
   )
 }
 

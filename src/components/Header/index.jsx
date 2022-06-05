@@ -9,7 +9,7 @@ function Header(){
     <div className={styles.header}>
       <div className={styles.headerContainer}>
           <div>
-            <img src={headerLogo} alt="" className={styles.headerLogo}/>
+            <img src={headerLogo} alt="header logo" className={styles.headerLogo}/>
           </div>
         <ul className={styles.headerNav}>
           <li className={styles.navItem}>

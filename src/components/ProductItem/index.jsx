@@ -1,6 +1,9 @@
 import styles from './style.module.sass';
 import cart from '../../asserts/header-cart.png'
 
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
+
 import {useDispatch} from 'react-redux'
 import { setItemsInCart } from '../Store/cart/reducer';
 
@@ -16,7 +19,13 @@ function Product({product, onMore}) {
     <>
       <div className={styles.product}>
         <div className={styles.image}>
-          <img src={product.image} alt="" />
+          <LazyLoadImage 
+            effect='blur'
+            src={product.image} 
+            alt="product"
+            height='400px'
+            width='300px'
+          />
         </div>
         <div className={styles.desc}>
           <h2>{product.title}</h2>
@@ -28,7 +37,7 @@ function Product({product, onMore}) {
             <div>
               <button onClick={() => onMore(product)}>More</button>
               <button onClick={appendToCart}>
-                <img src={cart} alt="" />
+                <img src={cart} alt="cart vec" />
               </button>
             </div>
           </div>

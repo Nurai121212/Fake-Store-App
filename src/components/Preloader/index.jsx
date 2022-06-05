@@ -5,7 +5,7 @@ function Preloader(){
   return(
     <div className={styles.preloader}>
       <div className={styles.loadImg}>
-        <img src={preloader} alt="" />
+        <img src={preloader} alt="preloader gif" />
       </div>
     </div>
   )
