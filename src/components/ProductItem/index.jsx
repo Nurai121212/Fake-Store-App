@@ -6,10 +6,12 @@ import 'react-lazy-load-image-component/src/effects/blur.css';
 
 import {useDispatch} from 'react-redux'
 import { setItemsInCart } from '../Store/cart/reducer';
+import { useNavigate } from 'react-router-dom';
 
-function Product({product, onMore}) {
+function Product({product}) {
   const dispatch = useDispatch();
-
+  const navigate = useNavigate();
+  
   const appendToCart = (e) => {
     e.stopPropagation();
     dispatch(setItemsInCart(product));
@@ -35,7 +37,7 @@ function Product({product, onMore}) {
           <div className={styles.productBottom}>
             <h5>{product.price}$</h5>
             <div>
-              <button onClick={() => onMore(product)}>More</button>
+              <button onClick={() => navigate('/product/' + product.id)}>More</button>
               <button onClick={appendToCart}>
                 <img src={cart} alt="cart vec" />
               </button>

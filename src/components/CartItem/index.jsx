@@ -25,4 +25,5 @@ function CartItem({product}){
     </div>
   )
 }
+
 export default CartItem;
